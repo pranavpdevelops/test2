@@ -2,8 +2,8 @@ import express from "express"
 import mongoose from "mongoose"
 import cors from "cors"
 import dotenv from "dotenv"
-import router from "./routes/authroutes"
-import route from "./routes/taskroutes"
+import router from "./routes/authroutes.js"
+import route from "./routes/taskroutes.js"
 dotenv.config()
 
 const app = express()
@@ -20,4 +20,4 @@ mongoose.connect(process.env.MONGO_URI).then(()=>{ console.log("db connected")})
 
 app.listen(port,()=>{
     console.log(`server running on port ${port}`)
-}).catch((error)=>{ console.log("db not connected")})
+})
